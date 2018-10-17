@@ -1,0 +1,431 @@
+@charset "utf-8";
+/*===============资金管理==============*/
+.screen-body{}
+.screen-body .jiansuo{ float:right; width:80px; height:36px; text-align:center; color:#fff; background:#17a2d5; border:none; -webkit-border-radius:2px; -moz-border-radius:2px; border-radius:2px; cursor:pointer; margin-left:20px;}
+.screen-body .date-form{ float:right; width:110px; position:relative;}
+.screen-body .date-form .date-on{ height:34px; text-align:center; line-height:34px; background:#F6F6F6; border:solid 1px #DFDFDF;}
+.screen-body .calendar-box{ position:absolute; left:0px; top:36px;}
+.screen-body .to{ float:right; width:10px; height:1px; overflow:hidden; background:#7B7B7B; margin:18px 11px 0px;}
+.selectBox {float: right;width: 110px;position: relative;z-index: 99; margin-right:20px;}
+.selectBox .select-selected {border: solid 1px #DFDFDF;height: 34px;padding: 0px 27px 0px 17px;position: relative;background:#F6F6F6;}
+.selectBox .select-selected i {display: block;width: 12px;height: 7px;background: url(images/fund.png) no-repeat -20px 0px;overflow: hidden;position: absolute;right: 13px;top: 14px;cursor: pointer;}
+.selectBox .select-selected h3{ line-height:34px;}
+.selectBox .select-hover{ background:#fff;}
+.selectBox .select-hover i{ background-position:-40px 0px;}
+.selectBox ul {position: absolute;left: 0px;top: 35px;border: solid 1px #D1D1D1;background: white;width: 108px;display: none;}
+.selectBox ul li {height: 32px;}
+.selectBox ul li a {display: block;height: 34px;lin
+e-height: 34px;padding-left: 17px;white-space: nowrap;}
+.selectBox ul li a:hover{ color:#fff; background:#17a2d5;}
+/*2014-12-11添加*/
+.screen-body .screen_tit{ float:right; font-size:12px; color:#222; padding-right:15px; line-height:36px;}
+.screen-body .input_text{ float:left; padding:8px 10px; background:#f6f6f6;}
+/*交易记录数据*/
+.deal-data{ margin-top:10px;}
+.deal-data dt{ border-bottom:solid 1px #ddd; height:30px; padding:0px 5px; color:#333;}
+.deal-data .deal-time{ float:left; width:215px;}
+.deal-data .deal-name{ float:left; width:218px; margin-right:10px; white-space:nowrap; overflow:hidden;}
+.deal-data .deal-type{ float:left; width:90px;}
+.deal-data .deal-money{ float:left; width:120px; text-align:right;}
+.deal-data .deal-balance{ float:right; width:130px; text-align:right;}
+.deal-data dd{ height:54px; line-height:54px; border-bottom:solid 1px #eee; padding:0px 5px;}
+.deal-data dd .deal-balance{ color:#3f7eb3; height:54px;white-space: nowrap; overflow:hidden;text-overflow:ellipsis;}
+/*没有交易记录*/
+.deal-not {padding-top:70px;}
+.deal-not h3 {font-size:16px;color:#666;text-align:center;}
+.deal-not .a_button {margin:25px auto 0px; width:150px;}
+/*===============充值==============*/
+.leftTitle {height:71px;position:relative; margin-bottom:-1px; z-index:50;}
+.leftTitle span {float:left;display:block;width:191px;height:64px;line-height:64px;padding:3px 0px;border-right:1px solid #e3e3e3;text-align:center;background:#fff;font-size:20px;color:#333;cursor:pointer;border-bottom:1px solid #e3e3e3; }
+.leftTitle span img {margin-top:12px;}
+.leftTitle span.on {border-top:3px solid #17a2d5; border-bottom-color:#fff;  padding-top:0px;}
+.payInvest {padding:0px 40px 62px 40px;border-top:1px solid #e3e3e3; position:relative; z-index:49; }
+.payInvest .investMain {width:782px;padding-bottom:22px;background:url(images/dashed.png) repeat-x left bottom; overflow:hidden;}
+.payInvest .investMain h3 {line-height:32px;padding:28px 0px 0px;font-size:16px;color:#444;}
+.payInvest .investMain .other {padding:14px 0px 0px;}
+.payInvest .investOver {width:892px;}
+.payInvest .investContent label {float:left;width:173px;padding:24px 32px 0px 0px;cursor: pointer; position:relative;}
+.payInvest .investContent input {float:left;width:14px;height:14px;margin:14px 16px 0px 0px;}
+.payInvest .investContent img {float:left;width:130px;height:40px;border:1px solid #e7e7e7;}
+.payInvest .investFooter {position:relative;width:220px;padding-top:20px;}
+.investContent .img_on i {display: block;width: 15px;height: 15px;position: absolute;background: url(../images/on.gif) no-repeat;}
+.payInvest .investFooter h3 {height:46px;line-height:46px;text-align:center;font-size:18px;color:#444; overflow:hidden; margin-bottom:12px;}
+.payInvest .investFooter h3 em {color:#17a2d5;}
+.payInvest .investFooter input {width:198px; font-size:16px;}
+.payInvest button {display:block;width:220px;height:34px;line-height:34px;margin-top:20px;text-align:center;border:none; background:#17a2d5;font-size:14px;color:#fff;cursor:pointer;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px; cursor:pointer;}
+.payInvest button:hover {background:#1bb2ea;}
+.payInvest .investFooter .inputTxt{ float:none;}
+.payInvest .tips{ width:590px; border:solid 1px #99cadc; background:#fffffe; border-radius:4px; -webkit-border-radius:4px; -moz-border-radius:4px; padding:20px 0px 15px; margin-top:40px;}
+.payInvest .tips h3{ font-size:14px; color:#333; padding-left:30px;}
+.payInvest .tips p{ line-height:22px; padding-left:30px; margin-top:10px;}
+.payInvest .recharge-tips{ text-align:center; padding:15px 0px; background:url(images/dashed.png) repeat-x 0px bottom; line-height:24px; font-size:14px; line-height:24px; color:#fa3e58;}
+/*银行提示信息*/
+.payInvest .bank-hint { display:none;position:absolute;left:10px;top:-60px;width:156px;line-height:24px;padding:12px 10px;border:1px solid #6DC3E3;font-size:12px;color:#666;background:#fff;}
+.payInvest .bank-hint i {position:absolute;left:50%; margin-left:-7px;top:72px;width:12px;height:6px; overflow:hidden; background:url(images/myaccount.png) no-repeat -210px -160px;}
+.payInvest .bank-layer{ z-index:99;}
+.payInvest .bank-layer .bank-hint{ display:block;}
+/*银行卡支付限额信息*/
+.payInvest .bankType { padding-top:20px;}
+.payInvest .bankType h3 { padding:0px; font-size:14px; color:#666;}
+.payInvest .bankType table{ width:710px; margin:10px auto 0px;}
+.payInvest .bankType th {height:38px; line-height:38px; background:#fcfcfc; font-size:12px; color:#999; overflow:hidden; border:solid 1px #f0f0f0; padding:0px 10px; font-weight:normal;}
+.payInvest .bankType td{ border:solid 1px #f0f0f0; text-align:center; background:#fff; padding:12px 10px; color:#666;}
+/*网付通*/
+.payInvest .investBottom { width:578px; padding-top:29px;}
+.payInvest .investBottom .title { width:533px; line-height:24px; border:1px solid #f0e3bc; padding:22px 0px 22px 43px; background:#fffffe; font-size:12px; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}
+.payInvest .investBottom ul { padding:14px 0px 0px 0px;}
+.payInvest .investBottom li { padding-top:19px; height:38px; vertical-align:top; position:relative;}
+.payInvest .investBottom .name{ float:left; line-height:38px; font-size:12px; color:#999;}
+.payInvest .investBottom .rela { position:relative;}
+.payInvest .investBottom h3 { float:left; width:156px; height:38px; text-align:right; margin-right:20px; line-height:38px; font-size:14px; color:#444;}
+.payInvest .investBottom input { float:left; width:198px; height:18px; line-height:18px; padding:9px 10px; font-size:12px; color:#999;}
+.payInvest .investBottom button { margin-left:176px;}
+.payInvest .investBottom .allBank { float:left; width:218px; padding:5px 0px; border:1px solid #eaeaea;}
+.payInvest .investBottom .input-yuan{ font-size:12px;}
+/*支付投资页面新改*/
+.payInvest .investTest {width:550px;margin-top:20px;padding:18px 20px;background:#fffffe;border:1px solid #f0e3bc;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
+.payInvest .investTest i {width:22px;height:22px;background:url(images/fund.png) no-repeat -60px 0px;margin-top:16px;}
+.payInvest .investTest span {padding:15px 0px 0px 32px;font-size:14px;color:#666;}
+/*交易失败*/
+.failureReasons .layer-top,.failureSuccess .layer-top { height:105px; line-height:105px; color:#444;}
+.failureReasons .layerBottom h3 { padding:26px 0px 0px 66px; font-size:14px; color:#444;}
+.failureReasons .txt-cnt { padding:16px 30px 0px 66px; font-size:14px; color:#777;line-height:24px;}
+.failureReasons .failureClose { margin-top:40px;}
+.failureReasons .failureClose a { display:block; width:148px; height:32px; line-height:32px; text-align:center; border:1px solid #c3c3c3; font-size:14px; color:#666; -moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px; margin:0 auto;}
+.failureReasons .failureClose a:hover { background:#17a2d5; border-color:#17a2d5; color:#fff;}
+/*充值成功*/
+.failureSuccess { height:280px; margin-top:-140px;}
+.failureSuccess .layer-top{ background:#3cbe9b url(images/layer-top-bg.png) repeat-x 0px bottom; color:#fff;}
+.failureSuccess .layer-top h3{ color:#fff;}
+.failureSuccess .txt-cnt { padding:22px 0px 0px 66px; font-size:14px; color:#666; line-height:24px;}
+.failureSuccess .failureClose { margin-top:40px;}
+.failureSuccess .failureClose a {display:block;width:148px;height:32px;line-height:32px;text-align:center; font-size:14px; border:1px solid #c3c3c3;color:#666;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px; margin:0 auto;}
+.failureSuccess .failureClose a:hover {background:#3cbe9b;border-color:#3cbe9b;color:#fff;}
+/*支付*/
+.failurePayment{ height:310px; margin-top:-155px;}
+.failurePayment .layer-top h3 {color:#fff;}
+.failurePayment .txt-cnt{ padding-left:52px;}
+.failurePayment .failureClose {width:336px; margin:40px auto 0px;}
+.failurePayment .failureClose a {height:52px;line-height:52px;}
+.failurePayment .failureClose .fl {line-height:20px;height:45px;padding-top:7px;}
+/*未认证*/
+.unrecognized{ padding-top:135px; text-align:center; border-top:solid 1px #E3E3E3;}
+.unrecognized h3{ font-size:16px;}
+.unrecognized .input_btn{ width:150px; margin:25px auto 0px;}
+/*============= 提现 ==============*/
+.withdrawCash .CashTitle {height:70px;line-height:70px; font-size:20px;color:#222;padding-left:60px;border-bottom:1px solid #eaeaea;}
+.withdrawCash .CashTitle i {padding-left:10px;vertical-align:middle;font-size:12px;color:#666;}
+.withdrawCash .CashMain {padding:0px 80px 120px 60px;}
+.withdrawCash .bankAll {padding:22px 0px 30px 0px;border-bottom:1px dotted #d0d0d0;font-size:14px;}
+.withdrawCash .abbBank {height:24px;line-height:24px;font-size:14px;color:#999;cursor:pointer;}
+.withdrawCash .abbBank i { float:left;width:24px;height:24px;margin-right:14px;background:url(images/fund.png) no-repeat -20px -30px;vertical-align:top;}
+.withdrawCash .abbBank a{ display:block;}
+.withdrawCash .abbBank a:hover { color:#17a2d5;}
+.withdrawCash .abbBank a:hover i {background-position:-55px -30px;}
+.withdrawCash .bank {margin-top:10px;height:54px;line-height:54px;border:1px solid #eaeaea;padding:0px 1px;cursor:pointer;}
+.withdrawCash .bank i {float:left;width:14px;height:14px;background:url(images/myaccount.png) no-repeat 0px -185px;margin:18px 27px 0px 18px;}
+.withdrawCash .bank span {float:left;}
+.withdrawCash .bank .bankImg {width:164px;padding-top:6px;}
+.withdrawCash .bank .number {width:164px;font-size:16px;color:#444;}
+.withdrawCash .bank .type {width:130px;}
+.withdrawCash .bank a {float:right;margin:0px 24px 0px 5px;}
+.withdrawCash .bank:hover,.withdrawCash .bank-on {height:52px;line-height:52px;border:2px solid #17a2d5;padding:0px;}
+.withdrawCash .bank:hover i,.withdrawCash .bank-on i{margin-top:17px;}
+.withdrawCash .bank:hover .bankImg,.withdrawCash .bank-on .bankImg {padding-top:5px;}
+.withdrawCash .bank-on i {background-position:-20px -185px;}
+.withdrawCash .CashFrom {padding-top:20px;}
+.withdrawCash .CashFrom h4 {height:28px;line-height:28px;font-size:14px;color:#666;}
+.withdrawCash .CashFrom h4 em {color:#17a2d5;padding:0px 2px 0px 12px;}
+.withdrawCash .CashTips {width:690px;background:#fffffe;border:1px solid #99cadc;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;margin:50px 0px 0px;padding:15px 0px 15px 0px;}
+.withdrawCash .CashTips h4 {height:24px;line-height:24px; padding-left:45px;}
+.withdrawCash .CashTips .tipsTxt {line-height:22px;color:#666;padding-top:10px; padding-left:45px;}
+.withdrawCash .CashFrom li {padding-top:20px;height:38px;line-height:38px;}
+.withdrawCash .CashFrom h3 {float:left;width:68px;color:#666;}
+.withdrawCash .CashFrom .input_text {width:198px;}
+.withdrawCash .CashFrom .txt-hint {padding-left:14px;color:#999;}
+.withdrawCash .CashFrom .input_btn {margin:20px 0px 0px 68px;}
+.withdrawCash .CashFrom h5{ float:left;}
+.withdrawCash .CashFrom h5 em{ color:#17a2d5; padding-right:3px;}
+.withdrawCash .unrecognized{ border-top:none;}
+/*修改成功弹层*/
+.change-success{ }
+.change-success .txt-cnt{ padding:40px 0px 0px 0px; text-align:center;}
+/*申请提现*/
+.successCash{ height:410px; margin-top:-205px;}
+.successCash .layerBottom, .deletebank .layerBottom{padding-top:28px;}
+.successCash .bank,.deletebank .bank {width:310px;height:54px;line-height:54px;border:1px solid #eaeaea;}
+.successCash .bank .bankImg,.deletebank .bank .bankImg {float:left;padding:6px 10px 0px;}
+.successCash .bank .number,.deletebank .bank .number {float:left;width:94px;color:#444;}
+.successCash .bank .type ,.deletebank .bank .type{float:left;color:#666;}
+.successCash .layerBottom h3 {padding-top:12px;}
+.successCash .layer-top em {color:#17a2d5;}
+.successCash .layerBottom {padding-left:0px;}
+.successCash .txt-cnt,.successCash .layerBottom h3{ padding-left:78px;}
+/*删除银行卡*/
+.deletebank{ height:300px; margin-top:-150px;}
+.deletebank .failureTwo {width:348px;padding-left:0px;}
+.deletebank .failureTwo a {float:left;}
+.deletebank .failureTwo .fr {float:right;}
+/*添加银行卡*/
+.layer-add-bank {width:836px;height:600px; margin:-300px 0px 0px -418px; _position:absolute; _margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TipPreViewMargin =document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px');}
+.layer-add-bank .layer-top{position:relative;height:100px;background-color:#fff;line-height:74px;font-size:22px;color:#444px; margin:0px 40px;}
+.layer-add-bank .layer-top .bank-name {position:absolute;left:0px;bottom:2px;height:30px;line-height:30px;}
+.layer-add-bank .layer-top .bank-name h5 {float:left;width:110px;padding-right:20px;text-align:right;color:#444;font-size:14px;}
+.layer-add-bank .layer-top .bank-name .name {float:left;font-size:12px;color:#999;}
+.layer-add-bank .layer-txt { background:url(images/layer-top-bg.png) repeat-x left bottom;padding-bottom:12px; margin:0px 40px;}
+.layer-add-bank .layer-main .layer-txt li{float:left;width:342px;}
+.layer-add-bank .layer-main li {line-height:38px;height:38px;vertical-align:middle; margin-top:15px;}
+.layer-add-bank .layer-main h3 {float: left;width: 100px;text-align: right;padding-right: 20px;height: 38px;overflow: hidden;}
+.layer-add-bank .layer-main h3 em {padding-right:4px;color:#c7000a;font-size:14px;}
+.layer-add-bank .layer-main .select-form,.layer-add-bank .layer-main .selected-on {width:220px;height:36px;line-height:36px;}
+.layer-add-bank .layer-main .selected-on {width:193px;overflow:hidden;}
+.layer-add-bank .layer-main .selected-on h4 {width:190px;height:36px;line-height:36px;}
+.layer-add-bank .layer-main .inputTxt {width:218px;height:38px;line-height:38px;}
+.layer-add-bank .layer-main .inputTxt input {width:200px;}
+.layer-add-bank .layer-main .error-hint {left:0px;top:37px;height:36px;line-height:36px;z-index:88;}
+.layer-add-bank .layer-main .error-hint i {top:-6px;left:20px;background-position:-90px -40px;width:8px;height:6px;}
+.layer-add-bank .layer-main .select-form dl {top:30px;width:220px;z-index:999;}
+.layer-add-bank .layer-main .number {float:left;width:90px; font-size:14px;padding-left:10px;color:#444;}
+.layer-add-bank .layer-main .input_btn { float:left; width:125px; margin-top:0px;}
+.layer-add-bank .layer-main .again {float:left;padding:0px 20px 0px 13px;}
+.layer-add-bank .layer-main .again em{ color:#17a2d5; padding-left:5px;}
+.layer-add-bank .layer-main .againOn {background:#cdcdcd; color:#fff; cursor:default;}
+.layer-add-bank .add-bank-click {padding:18px 0px 0px 0px; text-align:center;}
+.layer-add-bank .add-bank-click .a_button { display:inline-block; width:140px; margin:0px 12px;}
+.layer-add-bank .add-bank-click .cancel{ border-color:#c3c3c3; color:#666;}
+.layer-add-bank .add-bank-click .cancel:hover{ color:#fff; border-color:#17a2d5;}
+.layer-add-bank .CashTips {width:490px;background:#feffff;border:1px solid #99cadc;-moz-border-radius:2px;-webkit-border-radius:5px;border-radius:5px;margin:20px auto 0px;padding:15px 0px 15px 0px;}
+.layer-add-bank .CashTips h4 {font-size:14px; padding-left:24px; line-height:inherit; height:inherit;}
+.layer-add-bank .CashTips .tipsTxt {line-height:22px;color:#666; margin-top:5px; padding-left:24px; padding-top:0px;}
+.layer-add-bank .mr-right{ margin:0px 40px 0px 10px; display:inline;}
+.layer-add-bank .phone-form{ padding-left:50px;}
+.layer-add-bank .phone-form .or{ float:left; padding:0px 5px; color:#444; font-size:14px;}
+/*============= 收益计划 ==============*/
+.yieldplan .deal-time {width:140px;}
+.yieldplan .deal-name {width:190px;}
+.yieldplan .deal-type {width:125px;}
+.yieldplan .deal-status {float:left;width:125px;}
+.yieldplan .deal-return {float:left;width:90px;}
+/*============= 充值记录 ==============*/
+.chongzhijilu .deal-time {width:180px;}
+.chongzhijilu .deal-number {float:left;width:170px; margin-right:30px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.chongzhijilu dd .deal-number{ height:54px;}
+.chongzhijilu .deal-name{ width:180px;}
+.chongzhijilu .deal-type {width:100px;}
+.chongzhijilu .deal-status {float:left;width:100px;}
+/*============= 提现记录 ==============*/
+.tixianjilu .deal-time {width:160px;}
+.tixianjilu .deal-number {float:left;width:120px; margin-right:10px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.tixianjilu dd .deal-number{ height:54px;}
+.tixianjilu .deal-type {width:110px;}
+.tixianjilu .deal-bank {float:left;width:190px; margin-right:10px;}
+.tixianjilu dd .deal-bank{ height:54px; white-space:nowrap; overflow:hidden;}
+.tixianjilu .deal-status {float:left;width:100px;}
+.tixianjilu dd .deal-status{ height:54px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.tixianjilu .deal-money {float:left;width:120px;}
+.tixianjilu dd .deal-money {color:#3f7eb3; height:54px;white-space: nowrap; overflow:hidden;text-overflow:ellipsis;}
+.tixianjilu .deal-balance {width:90px;}
+/*============= 红包 ==============*/
+.red-body{ padding-bottom:70px;}
+.red-body .red-title{ margin:0px 70px 0px 60px; height:70px; line-height:70px; font-size:20px; color:#222;}
+.red-body .tab-nav{ height:29px; border-bottom:solid 1px #D1D1D1; position:relative;  margin:40px 70px 0px 60px;}
+.red-body .tab-nav ul{ float:left;}
+.red-body .tab-nav li{ float:left; width:125px; height:29px; position:relative; text-align:center; }
+.red-body .tab-nav li a{ float:left; width:125px; color:#666; height:29px; position:relative;}
+.red-body .tab-nav li a:hover{ color:#3f7eb3;}
+.red-body .tab-nav li a i{ width:12px; height:7px; overflow:hidden; background:url(images/myaccount.png) no-repeat -105px -75px; position:absolute; left:50%; bottom:-1px; margin-left:-6px; display:none;}
+.red-body .tab-nav li a.s{ padding-top:0px; color:#3f7eb3;}
+.red-body .tab-nav li a.s i{ display:block;}
+.red-body .tab-nav h3{ float:right; font-size:12px; color:#333; line-height:21px;}
+.red-body .tab-nav h3 i{ float:left; width:18px; height:21px; overflow:hidden; background:url(images/myaccount.png) no-repeat -130px -75px; margin-right:5px;}
+/*红包成功使用*/
+.layer-use{ width:413px; height:381px; margin:-190px 0px 0px -205px; border-radius:0px; background:url(images/use-layer.png) no-repeat;}
+.layer-use .layer-close{ top:130px; right:10px; background:url(images/bn-close.png) no-repeat;}
+.layer-use .use-btn{ text-align:center; padding-top:315px;}
+.layer-use .use-btn a,.newred-box .newred-btn a, .red-btn a{ display:inline-block; width:148px; height:28px; line-height:28px; text-align:center; border:solid 1px #c3c3c3; color:#fffefe;-moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px; margin:0px 6px;}
+.layer-use .use-btn a:hover,.layer-use .use-btn a.on{ border-color:#f7ce0f; background:#f7ce0f; color:#d11b25;}
+/*新手红包说明*/
+.newred-box{ padding:22px 32px 0px;}
+.newred-box li{ line-height:24px; padding-left:17px; vertical-align:middle; color:#666;}
+.newred-box li span{ float:left; display:inline; margin-left:-17px;}
+.newred-box li p{ float:left;}
+.newred-box .newred-text{ line-height:24px; color:#444; margin-top:20px;}
+.newred-box .newred-text span{ color:#999; margin-right:5px;}
+.newred-box .newred-btn{ margin-top:35px; text-align:center;}
+.newred-box .newred-btn a,.red-btn a{ margin:0px 26px; color:#666;}
+.newred-box .newred-btn a.on,.red-btn a.on{ border-color:#17A2D5; color:#17A2D5;}
+.newred-box .newred-btn a:hover,.red-btn a:hover{ background:#17A2D5; color:#fff; border-color:#17A2D5;}
+.red-tit{ height: 70px;line-height: 70px;font-size: 20px;color: #222;padding-left: 60px;border-bottom: 1px solid #EAEAEA;}
+.red-tit em{ color:#17A2D5; padding:0px 3px;}
+.newred-box .red-txt{ line-height:24px; color:#666; height:120px; overflow:auto; overflow-x:hidden;}
+/*单个红包*/
+.red-list{ padding-left:60px;}
+.red-list .red-box{ float:left; width:236px; margin:24px 65px 0px 0px; display:inline;}
+.red-list .red-top{ height:75px; background:url(images/red-top.gif) no-repeat; position:relative;}
+.red-list .red-top h3{ line-height:75px; text-align:center; color:#fff; font-size:20px;}
+.red-list .red-top span{ display:block; width:56px; height:24px; overflow:hidden; text-align:center; line-height:24px; color:#fff; background:url(images/myaccount.png) no-repeat -105px -40px; position:absolute; right:7px; bottom:-14px;}
+.red-list .red-foot{ width:232px; border:solid 2px #E6333D; border-top:none; height:255px; -moz-border-radius:0px 0px 5px 5px; -webkit-border-radius:0px 0px 5px 5px; border-radius:0px 0px 5px 5px;}
+.red-list .red-foot h2{ height:90px; line-height:90px; overflow:hidden; font-size:20px; text-align:center; color:#e6333d;}
+.red-list .red-foot h2 span{ font-size:72px;}
+.red-list .red-foot p{ padding-left:17px; line-height:24px;}
+.red-list .red-foot p a{ color:#16a2d5;}
+.red-list .red-foot .red-btn{ text-align:center; margin-top:10px;}
+/*已使用*/
+.red-off .red-top{ background:url(images/red-top-off.gif) no-repeat;}
+.red-off .red-top span{ background-position:-175px -40px;}
+.red-off .red-foot{ border-color:#C3C3C3;}
+.red-off .red-foot h2{ color:#999;}
+.red-off .red-foot p{ margin-top:28px;}
+ .red-off .red-foot .red-btn{ margin-top:15px;}
+/*2014-1-15添加加息红包*/ 
+.red-list .jiaxi-box .red-top{ background:url(images/bg-jiaxi-top.gif) no-repeat;} 
+.red-list .jiaxi-box .red-foot{ border-color:#EE760B;} 
+/*================奖励管理=================*/
+.reward-body{ padding:0px 70px 30px 60px;}
+.reward-body .reward-tit{ font-size:20px; height:70px; line-height:70px; color:#222; border-bottom:solid 1px #eaeaea;}
+.reward-body .code{ margin-top:23px;}
+.reward-body .code h3{ font-size:16px; color:#444; height:35px;}
+.reward-body .code span{ font-size:20px;}
+.reward-body .code p{ color:#999;}
+.invite-body{ margin-top:38px;}
+.invite-body .invite-ewm{ float:left; width:332px;}
+.invite-body .invite-ewm h3{ font-size:16px; color:#444; height:30px;}
+.invite-body .inviteewm-box{ padding-left:152px;}
+.invite-body .inviteewm-box .invite-img{ float:left; width:132px; height:132px; overflow:hidden; text-align:center; border:solid 1px #EAEAEA; display:inline; margin-left:-152px;}
+.invite-body .invite-ewm p{ line-height:18px; color:#999;}
+.invite-body .invite-ewm a{ float:left; width:180px; height:34px; text-align:center; line-height:34px; color:#fff; background:#ffa811; font-size:14px; -webkit-border-radius:2px; -moz-border-radius:2px; border-radius:2px; margin-top:44px;}
+.invite-body .invite-line{ float:left; width:1px; height:142px; background:url(images/dashed-y.gif) repeat-y; display:inline; margin:12px 63px 0px 68px; overflow:hidden;}
+.invite-body .invite-link{ float:left; width:272px;}
+.invite-body .invite-link .input_text{ width:250px; margin-top:12px;}
+.invite-body .invite-link a{ margin-top:12px;}
+.invite-firend{ margin-top:60px;}
+.invite-firend .invite-total{ height:45px; border-bottom:solid 1px #EAEAEA;}
+.invite-firend .invite-total h3{ float:left; font-size:20px; color:#222; margin-right:15px;}
+.invite-firend .invite-total h4{ float:left; color:#999; margin-top:8px;}
+.invite-firend .invite-total span{ color:#222; padding:0px 5px;}
+.invite-firend .invite_friends{ margin-top:30px;}
+.invite-firend .invite_friends_nav{ height: 39px; border-bottom: solid 1px #eaeaea;}
+.invite-firend .invite_friends_nav li{ float: left; position: relative; margin-bottom: -1px;}
+.invite-firend .invite_friends_nav a{ float: left; position: relative; width: 158px; height: 38px; text-align: center; line-height: 38px; background: #f4f4f4; color: #666; font-size: 16px; border: solid 1px #eaeaea; margin-right: -1px;}
+.invite-firend .invite_friends_nav .s{ background-color: #17a2d5; border-color: #17a2d5; color: #fff; z-index: 99;}
+.invite-firend .invite_friends_tab{ margin-top: 18px;}
+.invite-firend .invite_friends_tab th{ height:48px; text-align:center; border-bottom:solid 1px #D0D0D0; color:#222; font-weight: normal;}
+.invite-firend .invite_friends_tab td{ height:52px; line-height:52px; border-bottom:solid 1px #EEEEEE; text-align: center;}
+
+.not-invite{ height:371px; line-height:371px; border-bottom:solid 1px #EEEEEE; text-align:center; font-size:16px; color:#666;}
+.invite-tips{ margin-top:30px;}
+.invite-tips h3{ font-size:14px; color:#333;}
+.invite-tips ul{ margin-top:15px;}
+.invite-tips li{ float:left; width:300px; height:30px; line-height:30px;}
+.invite-tips li i{ float:left; width:4px; height:4px; overflow:hidden; background:url(images/dian.gif) no-repeat; margin:13px 11px 0px 0px;}
+/*人脉圈信息*/
+.network_circle{ float:left; color:#999; margin-top:8px; padding-left:20px;}
+.network_hint{ float:left; width: 14px;height: 14px; position:relative; margin-top:10px;}
+.network_hint i{display: block;width: 14px;height: 14px;overflow: hidden;background: url(images/wenhao.gif) no-repeat;cursor: pointer;}
+.network_hint .network{position: absolute;width: 190px;left: 50%;margin-left: -110px;top: -85px;line-height: 18px;border: 1px solid #6dc3e3;background: #fff;padding: 10px 15px; text-align:left;font-size: 12px;color: #444;display: none;-webkit-border-radius: 2px;-moz-border-radius: 2px;border-radius: 2px;}
+.network_hint .network em{display: block;position: absolute;left: 50%;bottom: -6px;width: 12px;height: 6px;margin-left: -7px;background: url(images/doubt-arr.gif) no-repeat;overflow: hidden;}
+/*===========分享红包弾层===========*/
+.hongbao_share_layer{ height:470px; margin-top:-235px;}
+.hongbao_share_layer .layer-top{height:105px; padding:0px; position:relative;}
+.hongbao_share_layer .layer-top h3{ height:42px; padding:0px; line-height:42px; color:#222; padding-top:32px;}
+.hongbao_share_layer .layer-top i{ display:inline-block; width:40px; height:42px; overflow:hidden; background:url(images/layer_hongbao_top.png) no-repeat; vertical-align:middle; margin-right:5px;}
+.hongbao_share_layer .layer-top p{ text-align:center; width:480px; position:absolute; left:0px; top:77px; font-size:14px; color:#444; line-height:20px;}
+.hongbao_share{ margin-top:17px;}
+.hongbao_share .share_left{ float:left; padding-left:35px;}
+.hongbao_share .weixin_share{ width:116px; text-align:center; padding-left:20px; margin:0;}
+.hongbao_share .weixin_share img{ width:100%; margin-top:20px;}
+.hongbao_share .weixin_share h3{ font-size:14px; color:#444;}
+.hongbao_share .others_share{ margin-top:65px;}
+.hongbao_share .others_share h3{ text-align:center; padding-right:12px; font-size:14px; color:#444;}
+.hongbao_share .others_share_links{ margin-top:25px;}
+.hongbao_share .others_share_links a{ display:inline-block; width:43px; height:43px; background:url(images/others_share.png) no-repeat; margin-right:12px;}
+.hongbao_share .others_share_links .share_xlwb{ background-position:0 0;}
+.hongbao_share .others_share_links .share_qqkj{ background-position:0 -50px;}
+.hongbao_share .others_share_links .share_txwb{ background-position:0 -100px;}
+.hongbao_share .share_line{ float:left; width:1px; height:302px; overflow:hidden; background:#eaeaea;}
+.hongbao_share .share_guide{ float:left; width:227px;  display:inline; margin-left:18px;}
+.hongbao_share .share_guide h3{ text-align:center; font-size:14px; color:#444;}
+.hongbao_share .guide_cnt{ height:270px; background:url(images/share_guide.jpg) no-repeat right 0px; margin-top:20px;}
+/**/
+.hongbao_share_record{ height:auto; padding-bottom:30px;  overflow:hidden;}
+.hongbao_share_record .layer-top{ height:105px; line-height:105px; padding:0px;}
+.hongbao_share_record .record_data{ width:375px; padding-left:34px; margin:20px 0px 0px;}
+.hongbao_share_record .record_data span{ display:inline-block;}
+.hongbao_share_record .data_user{ width:115px; text-align:center;}
+.hongbao_share_record .data_time{ width:180px; text-align:center;}
+.hongbao_share_record .data_money{ width:80px; text-align:right;}
+.hongbao_share_record dt span{ font-size:14px; color:#444;}
+.hongbao_share_record dd{ margin-top:15px;}
+
+/*分享红包*/
+.share-red-list .red-box{ width:154px; margin: 24px 19px 0px 0px;}
+.share-red-list .red-top{ height:46px; background:url(images/share-red-top.gif) no-repeat;}
+.share-red-list .red-foot{ width:150px; height:168px;}
+.share-red-list .red-top h3{ line-height:46px; font-size:14px;}
+.share-red-list .red-foot h2 { font-size:16px; height:40px; line-height:40px;}
+.share-red-list .red-foot h2 span{ font-size:30px;}
+.share-red-list .red-foot p{ text-align:center; padding-left:0px;}
+.share-red-list .red-btn a{ width:103px; height:23px; line-height:23px; margin:0 auto;}
+.share-red-list .red-off .red-top{ background:url(images/share-red-top-off.gif) no-repeat;}
+.share-red-list .red-off .red-foot p{ margin-top:0px;}
+.share-red-list .red-off .red-foot .red-btn{ margin-top:10px;}
+.red-body .orderby-box{ border-bottom:none; margin-top:20px;}
+.red-body .orderby-box h2{ float:left;}
+
+/*=======金英奖励========*/
+.reward_wap{ padding:0px 70px 0px 60px;}
+.reward_wap .reward_box{ float:left; width:334px; height:200px; margin-right:40px; background:#fff; border:solid 1px #659d30; border-bottom-width:2px; -webkit-border-radius:4px; -moz-border-radius:4px; border-radius:4px; margin-top:40px; position:relative;}
+.reward_wap .reward_logo{ height:30px; padding:15px 0px; border-bottom:dashed 1px #e4e4e4;}
+.reward_wap .reward_logo h3{font-size:18px; color:#009242; line-height:30px; text-align:center;}
+.reward_wap .reward_info{ height:20px; line-height:20px; padding-top:40px;}
+.reward_wap .reward_info h3{ float:left; width:83px; text-align:right; font-size:14px; color:#666;}
+.reward_wap .reward_info h4{ float:left; font-size:14px; padding-left:30px;}
+.reward_wap .reward_use{ position:absolute; width:334px; height:38px; background:#f5f5f5; color:#888;-webkit-border-radius:0px 0px 4px 4px; -moz-border-radius:0px 0px 4px 4px;border-radius:0px 0px 4px 4px; position:absolute; bottom:0px; left:0px;}
+.reward_wap .reward_use a{ float:right; line-height:38px; font-size:14px; display:inline; margin-right:10px;}
+.reward_wap .reward_use a i{ float:right; width:14px; height:14px; overflow:hidden; background:url(images/wenhao.gif) no-repeat; margin:12px 0px 0px 5px;}
+.reward_wap .reward_damai{ border-color:#c08646;}
+.reward_wap .reward_damai .reward_logo h3{ color:#c9173d;}
+/*智课网试听卡*/
+.reward_wap .zhike_card{ border-color:#6974a0;}
+.reward_wap .zhike_card .reward_logo h3{ color:#6974a0;}
+/*金英娱乐卡*/
+.reward_wap .jinying_card{ border-color:#c9173d;}
+.reward_wap .jinying_card .reward_info{ padding-top:20px;}
+.reward_wap .jinying_card .reward_logo h3{ color:#c9173d;}
+/*卡弾层*/
+.reward_layer{ width:540px; margin-left:-270px; height:auto; display:none;}
+.reward_layer .layer-bottom{ padding:30px 35px; font-size:14px;}
+.reward_layer .layer-bottom h3{ color:#009242; padding-bottom:15px;}
+.reward_layer .layer-bottom p{ line-height:26px;}
+.reward_layer .layer-btn{ text-align:center; margin-top:20px;}
+.reward_layer .layer-btn a{ display:inline-block; width:150px; height:32px; text-align:center; line-height:32px; background:#fff; border:solid 1px #c3c3c3; font-size:14px;-webkit-border-radius:2px; -moz-border-radius:2px;border-radius:2px;}
+.reward_layer .layer-btn a:hover{ border-color:#17a2d5; background-color:#17a2d5; color:#fff;}
+
+
+
+/*2017-2-15 提现红包*/
+.red-list .green-top { background: url("images/green_top.png") no-repeat;}
+.red-list .green-foot { border-color: #489c4a}
+
+/* 小金库邀请纪录 */
+.invite-title { margin: 40px 0 0; overflow: hidden; border-bottom: 1px solid #eaeaea}
+.invite-title li { margin: 0 -1px 0 0; border: 1px solid #eaeaea; border-bottom: none; float: left; font-size: 16px; color: #fff; width: 160px; height: 40px; background: #f4f4f4; text-align: center; line-height: 40px}
+.invite-title li.active {background: #00a2d8}
+.invite-title li.active a { color: #fff}
+.active-table { width: 100%}
+.active-table thead td,.active-table tbody td { color: #666; text-align:center; height: 52px; border-bottom: 1px solid #eeeeee}
+.active-table thead td { text-align:center; border-bottom: 1px solid #d0d0d0; color: #222}
+
+.active-table a { color: #00a2d8}
+
+.return-details { display: none; position: fixed; left: 50%; z-index: 100; top: 50%; margin: -180px 0 0 -185px; width: 370px; height: 360px; background: #fff; text-align: c
+}
+.no-data-status { padding: 40px 0; text-align: center; color: #969696}
+.return-details .title { padding: 20px 0; border-radius: 3px; font-size: 24px; color: #333; text-align: center; border-bottom: 1px solid #dedede}
+.return-details table { margin: 10px 0 0; width: 100%;}
+.return-details table thead td{ color: #222}
+.return-details table td { width: 33%; text-align: center; line-height: 36px; font-size: 14px}
+.return-details .line { margin: 10px 0; border-bottom: 1px solid #dedede}
+.return-details .close { position: absolute; right: 10px; top: 10px; width: 30px; height: 30px; background: url("images/return-details-close.png") no-repeat;}
+.return-details-layer { display: none; position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: #000;filter:alpha(opacity=70); 
+-moz-opacity:0.7; opacity:0.7;}

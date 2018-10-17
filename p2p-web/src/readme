@@ -1,0 +1,21 @@
+实名认证采用静态验证,在web/UserController下verifyRealNameTest方法
+如需真实数据请更改resources/realName-config.properties中实名认证api配置,可用京东万象或其他api
+
+支付宝采用沙箱支付
+ijaloa2807@sandbox.com
+111111
+微信是真实支付,请勿付款
+
+测试请修改:
+    1.p2p-dataservice:
+        redis连接信息
+        jdbc数据库连接信息
+        dubbo连接信息
+
+支持spring-session
+部署启动顺序及端口:
+1.开启redis和zookeeper,mysql服务
+2.dataservice:8081
+3.pay:9090
+4.p2p-web:8080
+访问localhost:8080/p2p

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:*.properties" />
+    <!-- 导入spring mvc配置文件 -->
+    <import resource="applicationContext-mvc.xml"/>
+    <!--spring session配置文件-->
+    <import resource="applicationContext-redis.xml"/>
+    <!-- 导入dubbo服务消费者配置文件 -->
+    <import resource="applicationContext-dubbo-consumer.xml"/>
+
+    <import resource="classpath:applicationContext-session.xml" />
+    <bean id="config" class="com.aqfun.p2p.config.Config">
+        <property name="realNameAppKey" value="${realNameAppKey}"/>
+        <property name="realNameUrl" value="${realNameUrl}" />
+    </bean>
+</beans>

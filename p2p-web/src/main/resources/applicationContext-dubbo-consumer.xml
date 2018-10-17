@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- 配置应用名称 -->
+    <dubbo:application name="p2p"/>
+    <!-- 配置注册中心 -->
+    <dubbo:registry protocol="zookeeper" address="192.168.147.200:2181"/>
+    <!-- 产品业务-->
+    <dubbo:reference id="loanInfoService" interface="com.aqfun.p2p.service.loan.LoanInfoService"
+                     version="1.0.0" check="false"/>
+    <!-- 用户业务 -->
+    <dubbo:reference id="userService" interface="com.aqfun.p2p.service.user.UserService"
+                     version="1.0.0" check="false" />
+    <!-- 投资记录业务 -->
+    <dubbo:reference id="bidInfoService" interface="com.aqfun.p2p.service.loan.BidInfoService"
+                     version="1.0.0" check="false" />
+    <!-- 用户资金余额 -->
+    <dubbo:reference id="financeAccountService" interface="com.aqfun.p2p.service.user.FinanceAccountService"
+                     version="1.0.0" check="false" />
+    <!-- 用户充值 -->
+    <dubbo:reference id="rechargeRecordService" interface="com.aqfun.p2p.service.loan.RechargeRecordService"
+                     version="1.0.0" check="false" />
+    <!-- 用户收益 -->
+    <dubbo:reference id="incomeRecordService" interface="com.aqfun.p2p.service.loan.IncomeRecordService"
+                     version="1.0.0" check="false" />
+    <!-- 获取redis全局唯一数 -->
+    <dubbo:reference id="onlyNumService" interface="com.aqfun.p2p.service.loan.OnlyNumService"
+                     version="1.0.0" check="false" />
+</beans>
