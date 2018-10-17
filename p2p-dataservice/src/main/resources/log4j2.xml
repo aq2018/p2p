@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="debug">
+    <appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <ThresholdFilter level="debug" onMatch="ACCEPT"
+                             onMismatch="ACCEPT"/>
+            <PatternLayout pattern="[dataservice] %d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n"/>
+        </Console>
+        <RollingFile name="RollingFile"
+                     fileName="/opt/tomcat_dataservice/logs/dataservice.log"
+                     filePattern="/opt/tomcat_dataservice/logs/$${date:yyyy-MM}/dataservice-%d{M M-dd-yyyy}-%i.log.gz">
+            <PatternLayout pattern="[dataservice] %d{yyyy-MM-dd 'at' HH:mm:ss z} %-5level %class{36} %L %M - %msg%xEx%n"/>
+            <SizeBasedTriggeringPolicy size="100MB"/>
+        </RollingFile>
+    </appenders>
+    <loggers>
+        <logger name="com.aqfun.p2p.mapper" level="debug"/>
+
+        <root level="debug">
+            <appender-ref ref="Console"/>
+            <appender-ref ref="RollingFile"/>
+        </root>
+    </loggers>
+</configuration>

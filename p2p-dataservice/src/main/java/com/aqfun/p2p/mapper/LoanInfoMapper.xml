@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.aqfun.p2p.mapper.LoanInfoMapper">
+    <resultMap id="BaseResultMap" type="com.aqfun.p2p.model.loan.LoanInfo">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="product_name" property="productName" jdbcType="VARCHAR"/>
+        <result column="rate" property="rate" jdbcType="DOUBLE"/>
+        <result column="cycle" property="cycle" jdbcType="INTEGER"/>
+        <result column="release_time" property="releaseTime" jdbcType="DATE"/>
+        <result column="product_type" property="productType" jdbcType="INTEGER"/>
+        <result column="product_no" property="productNo" jdbcType="VARCHAR"/>
+        <result column="product_money" property="productMoney" jdbcType="DOUBLE"/>
+        <result column="left_product_money" property="leftProductMoney" jdbcType="DOUBLE"/>
+        <result column="bid_min_limit" property="bidMinLimit" jdbcType="DOUBLE"/>
+        <result column="bid_max_limit" property="bidMaxLimit" jdbcType="DOUBLE"/>
+        <result column="product_status" property="productStatus" jdbcType="INTEGER"/>
+        <result column="product_full_time" property="productFullTime" jdbcType="TIMESTAMP"/>
+        <result column="product_desc" property="productDesc" jdbcType="LONGVARCHAR"/>
+        <result column="version" property="version" jdbcType="INTEGER"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, product_name, rate, cycle, release_time, product_type, product_no, product_money, 
+    left_product_money, bid_min_limit, bid_max_limit, product_status, product_full_time, 
+    product_desc,version
+  </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from b_loan_info
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from b_loan_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+    <insert id="insertSelective" parameterType="com.aqfun.p2p.model.loan.LoanInfo">
+        insert into b_loan_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="productName != null">
+                product_name,
+            </if>
+            <if test="rate != null">
+                rate,
+            </if>
+            <if test="cycle != null">
+                cycle,
+            </if>
+            <if test="releaseTime != null">
+                release_time,
+            </if>
+            <if test="productType != null">
+                product_type,
+            </if>
+            <if test="productNo != null">
+                product_no,
+            </if>
+            <if test="productMoney != null">
+                product_money,
+            </if>
+            <if test="leftProductMoney != null">
+                left_product_money,
+            </if>
+            <if test="bidMinLimit != null">
+                bid_min_limit,
+            </if>
+            <if test="bidMaxLimit != null">
+                bid_max_limit,
+            </if>
+            <if test="productStatus != null">
+                product_status,
+            </if>
+            <if test="productFullTime != null">
+                product_full_time,
+            </if>
+            <if test="version != null">
+                version,
+            </if>
+            <if test="productDesc != null">
+                product_desc,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="productName != null">
+                #{productName,jdbcType=VARCHAR},
+            </if>
+            <if test="rate != null">
+                #{rate,jdbcType=DOUBLE},
+            </if>
+            <if test="cycle != null">
+                #{cycle,jdbcType=INTEGER},
+            </if>
+            <if test="releaseTime != null">
+                #{releaseTime,jdbcType=DATE},
+            </if>
+            <if test="productType != null">
+                #{productType,jdbcType=INTEGER},
+            </if>
+            <if test="productNo != null">
+                #{productNo,jdbcType=VARCHAR},
+            </if>
+            <if test="productMoney != null">
+                #{productMoney,jdbcType=DOUBLE},
+            </if>
+            <if test="leftProductMoney != null">
+                #{leftProductMoney,jdbcType=DOUBLE},
+            </if>
+            <if test="bidMinLimit != null">
+                #{bidMinLimit,jdbcType=DOUBLE},
+            </if>
+            <if test="bidMaxLimit != null">
+                #{bidMaxLimit,jdbcType=DOUBLE},
+            </if>
+            <if test="productStatus != null">
+                #{productStatus,jdbcType=INTEGER},
+            </if>
+            <if test="productFullTime != null">
+                #{productFullTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="version != null">
+                #{version,jdbcType=INTEGER},
+            </if>
+            <if test="productDesc != null">
+                #{productDesc,jdbcType=LONGVARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.aqfun.p2p.model.loan.LoanInfo">
+        update b_loan_info
+        <set>
+            <if test="productName != null">
+                product_name = #{productName,jdbcType=VARCHAR},
+            </if>
+            <if test="rate != null">
+                rate = #{rate,jdbcType=DOUBLE},
+            </if>
+            <if test="cycle != null">
+                cycle = #{cycle,jdbcType=INTEGER},
+            </if>
+            <if test="releaseTime != null">
+                release_time = #{releaseTime,jdbcType=DATE},
+            </if>
+            <if test="productType != null">
+                product_type = #{productType,jdbcType=INTEGER},
+            </if>
+            <if test="productNo != null">
+                product_no = #{productNo,jdbcType=VARCHAR},
+            </if>
+            <if test="productMoney != null">
+                product_money = #{productMoney,jdbcType=DOUBLE},
+            </if>
+            <if test="leftProductMoney != null">
+                left_product_money = #{leftProductMoney,jdbcType=DOUBLE},
+            </if>
+            <if test="bidMinLimit != null">
+                bid_min_limit = #{bidMinLimit,jdbcType=DOUBLE},
+            </if>
+            <if test="bidMaxLimit != null">
+                bid_max_limit = #{bidMaxLimit,jdbcType=DOUBLE},
+            </if>
+            <if test="productStatus != null">
+                product_status = #{productStatus,jdbcType=INTEGER},
+            </if>
+            <if test="productFullTime != null">
+                product_full_time = #{productFullTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="version != null">
+                version = #{version,jdbcType=INTEGER},
+            </if>
+            <if test="productDesc != null">
+                product_desc = #{productDesc,jdbcType=LONGVARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <select id="selectHistoryAverageRate" resultType="java.lang.Double">
+      select CAST(avg(rate) AS decimal(10,2)) from b_loan_info
+    </select>
+    <select id="selectByProductTypeAndPage" parameterType="java.util.Map" resultMap="BaseResultMap">
+        select
+          <include refid="Base_Column_List" />
+        from b_loan_info
+        <where>
+            <if test="productType != null">
+              product_type = #{productType}
+            </if>
+        </where>
+        order by release_time desc
+        limit #{currentPage}, #{pageSize}
+    </select>
+    <select id="selectTotalByPage" resultType="java.lang.Long">
+        select
+          count(*)
+        from
+          b_loan_info
+        <where>
+            <if test="productType != null">
+                product_type = #{productType}
+            </if>
+        </where>
+    </select>
+    <update id="updateLoanInfoLeftMoneyAndVersionById">
+        UPDATE
+          b_loan_info
+        SET
+          left_product_money = left_product_money - ${bidMoney},
+          version = version + 1
+        WHERE
+          id = ${loanId} and version = ${version} and (left_product_money - ${bidMoney}) >= 0
+    </update>
+    <select id="selectLoanInfoListByproductStatus" resultMap="BaseResultMap">
+        SELECT
+          <include refid="Base_Column_List" />
+        FROM
+          b_loan_info
+        WHERE
+          product_status = #{productStatus}
+    </select>
+</mapper>

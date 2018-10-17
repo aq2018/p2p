@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <!-- 服务提供者：应用名称 -->
+    <dubbo:application name="dataservice"/>
+    <!-- 配置zookeeper注册中心 -->
+    <dubbo:registry protocol="zookeeper" address="192.168.147.200:2181" />
+    <!-- 产品业务 -->
+    <dubbo:service interface="com.aqfun.p2p.service.loan.LoanInfoService" ref="loanInfoServiceImpl"
+        version="1.0.0" timeout="15000" />
+    <!-- 用户业务 -->
+    <dubbo:service interface="com.aqfun.p2p.service.user.UserService" ref="userServiceImpl"
+                   version="1.0.0" timeout="15000" />
+    <!-- 投资记录业务 -->
+    <dubbo:service interface="com.aqfun.p2p.service.loan.BidInfoService" ref="bidInfoServiceImpl"
+                   version="1.0.0" timeout="15000" />
+    <!-- 用户资金余额业务 -->
+    <dubbo:service interface="com.aqfun.p2p.service.user.FinanceAccountService" ref="financeAccountServiceImpl"
+                   version="1.0.0" timeout="15000" />
+    <!-- 用户充值业务 -->
+    <dubbo:service interface="com.aqfun.p2p.service.loan.RechargeRecordService" ref="rechargeRecordServiceImpl"
+                   version="1.0.0" timeout="15000" />
+    <!-- 用户收益业务 -->
+    <dubbo:service interface="com.aqfun.p2p.service.loan.IncomeRecordService" ref="incomeRecordServiceImpl"
+                   version="1.0.0" timeout="15000" />
+    <!-- redis生成全局唯一数服务 -->
+    <dubbo:service interface="com.aqfun.p2p.service.loan.OnlyNumService" ref="onlyNumServiceImpl"
+                   version="1.0.0" timeout="15000" />
+</beans>

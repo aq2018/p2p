@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.aqfun.p2p.mapper.BidInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.aqfun.p2p.model.loan.BidInfo" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="loan_id" property="loanId" jdbcType="INTEGER" />
+    <result column="uid" property="uid" jdbcType="INTEGER" />
+    <result column="bid_money" property="bidMoney" jdbcType="DOUBLE" />
+    <result column="bid_time" property="bidTime" jdbcType="TIMESTAMP" />
+    <result column="bid_status" property="bidStatus" jdbcType="INTEGER" />
+  </resultMap>
+
+  <!-- 投资记录与用户:一对一关系-->
+  <resultMap id="BidUserBaseResultMap" type="com.aqfun.p2p.model.loan.BidInfo" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="loan_id" property="loanId" jdbcType="INTEGER" />
+    <result column="uid" property="uid" jdbcType="INTEGER" />
+    <result column="bid_money" property="bidMoney" jdbcType="DOUBLE" />
+    <result column="bid_time" property="bidTime" jdbcType="TIMESTAMP" />
+    <result column="bid_status" property="bidStatus" jdbcType="INTEGER" />
+    <association property="user"
+                 javaType="com.aqfun.p2p.model.user.User">
+                <id column="id" property="id" jdbcType="INTEGER" />
+                <result column="phone" property="phone" jdbcType="VARCHAR" />
+                <result column="login_password" property="loginPassword" jdbcType="VARCHAR" />
+                <result column="name" property="name" jdbcType="VARCHAR" />
+                <result column="id_card" property="idCard" jdbcType="VARCHAR" />
+                <result column="add_time" property="addTime" jdbcType="TIMESTAMP" />
+                <result column="last_login_time" property="lastLoginTime" jdbcType="TIMESTAMP" />
+                <result column="header_image" property="headerImage" jdbcType="VARCHAR" />
+    </association>
+  </resultMap>
+  <!-- 投资记录与产品关联-->
+  <resultMap id="LoanInfoBidResultMap" type="com.aqfun.p2p.model.loan.BidInfo">
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="loan_id" property="loanId" jdbcType="INTEGER" />
+    <result column="uid" property="uid" jdbcType="INTEGER" />
+    <result column="bid_money" property="bidMoney" jdbcType="DOUBLE" />
+    <result column="bid_time" property="bidTime" jdbcType="TIMESTAMP" />
+    <result column="bid_status" property="bidStatus" jdbcType="INTEGER" />
+    <association property="loanInfo"
+                 javaType="com.aqfun.p2p.model.loan.LoanInfo">
+                <id column="id" property="id" jdbcType="INTEGER"/>
+                <result column="product_name" property="productName" jdbcType="VARCHAR"/>
+                <result column="rate" property="rate" jdbcType="DOUBLE"/>
+                <result column="cycle" property="cycle" jdbcType="INTEGER"/>
+                <result column="release_time" property="releaseTime" jdbcType="DATE"/>
+                <result column="product_type" property="productType" jdbcType="INTEGER"/>
+                <result column="product_no" property="productNo" jdbcType="VARCHAR"/>
+                <result column="product_money" property="productMoney" jdbcType="DOUBLE"/>
+                <result column="left_product_money" property="leftProductMoney" jdbcType="DOUBLE"/>
+                <result column="bid_min_limit" property="bidMinLimit" jdbcType="DOUBLE"/>
+                <result column="bid_max_limit" property="bidMaxLimit" jdbcType="DOUBLE"/>
+                <result column="product_status" property="productStatus" jdbcType="INTEGER"/>
+                <result column="product_full_time" property="productFullTime" jdbcType="TIMESTAMP"/>
+                <result column="product_desc" property="productDesc" jdbcType="LONGVARCHAR"/>
+                <result column="version" property="version" jdbcType="INTEGER"/>
+    </association>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, loan_id, uid, bid_money, bid_time, bid_status
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from b_bid_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from b_bid_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.aqfun.p2p.model.loan.BidInfo" >
+    insert into b_bid_info (id, loan_id, uid, 
+      bid_money, bid_time, bid_status
+      )
+    values (#{id,jdbcType=INTEGER}, #{loanId,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, 
+      #{bidMoney,jdbcType=DOUBLE}, #{bidTime,jdbcType=TIMESTAMP}, #{bidStatus,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.aqfun.p2p.model.loan.BidInfo" >
+    insert into b_bid_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="loanId != null" >
+        loan_id,
+      </if>
+      <if test="uid != null" >
+        uid,
+      </if>
+      <if test="bidMoney != null" >
+        bid_money,
+      </if>
+      <if test="bidTime != null" >
+        bid_time,
+      </if>
+      <if test="bidStatus != null" >
+        bid_status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="loanId != null" >
+        #{loanId,jdbcType=INTEGER},
+      </if>
+      <if test="uid != null" >
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="bidMoney != null" >
+        #{bidMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="bidTime != null" >
+        #{bidTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="bidStatus != null" >
+        #{bidStatus,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.aqfun.p2p.model.loan.BidInfo" >
+    update b_bid_info
+    <set >
+      <if test="loanId != null" >
+        loan_id = #{loanId,jdbcType=INTEGER},
+      </if>
+      <if test="uid != null" >
+        uid = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="bidMoney != null" >
+        bid_money = #{bidMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="bidTime != null" >
+        bid_time = #{bidTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="bidStatus != null" >
+        bid_status = #{bidStatus,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.aqfun.p2p.model.loan.BidInfo" >
+    update b_bid_info
+    set loan_id = #{loanId,jdbcType=INTEGER},
+      uid = #{uid,jdbcType=INTEGER},
+      bid_money = #{bidMoney,jdbcType=DOUBLE},
+      bid_time = #{bidTime,jdbcType=TIMESTAMP},
+      bid_status = #{bidStatus,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectAllBidMoney" resultType="java.lang.Double">
+    select count(bid_money) from b_bid_info
+  </select>
+  <!-- 通过产品id获取所有投资记录 -->
+  <select id="selectBidInfoListByPage" resultMap="BidUserBaseResultMap">
+    select
+      b.*,u.*
+    from
+      b_bid_info b
+    left join
+      u_user u
+    on
+      b.uid = u.id
+    where
+      loan_id = #{loanId}
+    order by
+      bid_time desc
+    limit #{currentPage} , #{pageSize}
+  </select>
+  <select id="selectBidInfoListTotalByPage" resultType="java.lang.Long">
+    select
+      count(*)
+    from
+      b_bid_info b
+    left join
+      u_user u
+    on
+      b.uid = u.id
+    where
+      loan_id = #{loanId}
+  </select>
+  <resultMap id="topUserResultMap" type="com.aqfun.p2p.model.vo.TopUser">
+      <result column="phone" property="phone" jdbcType="VARCHAR" />
+      <result column="totalMoney" property="totalMoney" jdbcType="INTEGER" />
+  </resultMap>
+  <!-- 投资排行榜 -->
+  <select id="selectTopUserBidList" resultMap="topUserResultMap">
+    select
+      phone,sum(bid_money) as totalMoney
+    from
+      b_bid_info a
+    join
+      u_user b
+    on
+      a.uid = b.id
+    group by
+      uid
+    order by
+      totalMoney desc
+    limit 0,5
+  </select>
+
+  <sql id="loan_Column_List">
+    id as lid, product_name, rate, cycle, release_time, product_type, product_no, product_money,
+    left_product_money, bid_min_limit, bid_max_limit, product_status, product_full_time,
+    product_desc,version
+  </sql>
+  <select id="selectUserBidListByPage" resultMap="LoanInfoBidResultMap">
+    select
+      a.*,b.*
+    from
+      b_bid_info a
+    left JOIN
+      b_loan_info b
+    on
+      a.loan_id = b.id
+    WHERE
+      a.uid = #{uid}
+    ORDER BY
+      a.bid_time desc
+    limit #{currentPage},#{pageSize}
+  </select>
+  <select id="selectUserBidListTotalByPage" resultType="java.lang.Long">
+    select
+      count(*)
+    from
+      b_bid_info a
+    left JOIN
+      b_loan_info b
+    on
+      a.loan_id = b.id
+    WHERE
+      a.uid = #{uid}
+  </select>
+  <!--通过产品id查询投资表返回投资列表-->
+  <select id="selectBidInfoListByLoanId" resultMap="BaseResultMap">
+    SELECT
+      <include refid="Base_Column_List" />
+    from
+      b_bid_info
+    WHERE
+      loan_id  = #{loanId} and bid_status = 1
+  </select>
+</mapper>
