@@ -8,3 +8,7 @@
 dubbo服务的接口层：提供系统接口和实体类  
 ## p2p-web  
 网站前台，用户直接访问工程  
+    
+    #首先dataservice
+    1.dataservice:localhost:8081
+    2.web:localhost:8080
