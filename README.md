@@ -1,3 +1,16 @@
+## index
+![index](screenshot/index.png)  
+## detail
+![detail](screenshot/detail.png)  
+## login
+![login](screenshot/login.png)  
+## register
+![register](screenshot/register.png)  
+## products
+![products](screenshot/products.png)  
+
+# 模块说明
+此系统采用Maven管理整个项目，多模块化的SSM框架。主要分为前台web系统、dubbo数据接口系统、支付系统、实名认证系统、后台管理系统、合同签章系统、订单系统。
 ## p2p-parent  
 父类pom  
 ## p2p-commons  
