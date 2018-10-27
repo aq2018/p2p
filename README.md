@@ -20,8 +20,12 @@
 ## p2p-exterface  
 dubbo服务的接口层：提供系统接口和实体类  
 ## p2p-web  
-网站前台，用户直接访问工程  
+系统前台，用户直接访问工程  
     
-    #首先dataservice
-    1.dataservice:localhost:8081
-    2.web:localhost:8080
+    #备注
+    1.启动zookeeper和redis
+    2.在application.properties配置相关数据源
+    #首先启动dataservice系统，端口8081
+    3.http://localhost:8081
+    #web系统，端口8080
+    4.http://localhost:8080
